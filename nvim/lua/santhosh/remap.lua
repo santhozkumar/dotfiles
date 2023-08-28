@@ -13,6 +13,12 @@ vim.keymap.set("n", "<leader>j", ":wincmd j<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>k", ":wincmd k<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>c", ":hide<CR>", { noremap = true })
 
+
+vim.keymap.set("n", "<C-h>", ":wincmd h<CR>", { noremap = true })
+vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", { noremap = true })
+vim.keymap.set("n", "<C-j>", ":wincmd j<CR>", { noremap = true })
+vim.keymap.set("n", "<C-k>", ":wincmd k<CR>", { noremap = true })
+
 -- vim.keymap.set("n", "J", "mzJ`z") -- to keep the cursor at the same place
 
 -- to keep the cursor in the middle of editor
