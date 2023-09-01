@@ -123,6 +123,22 @@ lsp.set_preferences({
 lsp.on_attach(function(client, bufnr)
   local opts = {buffer = bufnr, remap = false}
 
+  local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
+  if client.supports_method("textDocument/formatting") then
+      vim.api.nvim_clear_autocmds({
+          group = format_sync_grp,
+          buffer = bufnr,
+      })
+      vim.api.nvim_create_autocmd('BufWritePre', {
+          group = format_sync_grp,
+          buffer = bufnr,
+          callback = function()
+           vim.lsp.buf.format({ bufnr = bufnr })
+           vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })
+          end
+      })
+  end 
+
   vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
   vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
   vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
