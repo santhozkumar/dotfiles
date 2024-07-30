@@ -1,14 +1,25 @@
-
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
 
 
+-- autocmd BufEnter *.py :setlocal tabstop=4 shiftwidth=4 expandtab
+
+
+vim.api.nvim_create_autocmd('BufEnter', {
+  pattern = { "*.lua", "*.js", "*.ts", "*.elm" },
+  callback = function(ev)
+    vim.opt.tabstop = 2
+    vim.opt.softtabstop = 2
+    vim.opt.shiftwidth = 2
+    vim.opt.expandtab = true
+  end
+})
 
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4  -- tab after some characters means move 4 spaces
-vim.opt.shiftwidth = 4  -- used by >>, <<
+vim.opt.shiftwidth = 4   -- used by >>, <<
 vim.opt.expandtab = true -- 4 white space characters instead of tab
 
 
@@ -33,6 +44,3 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 500
 vim.opt.colorcolumn = "80"
-
-
-

@@ -134,6 +134,7 @@ lsp.on_attach(function(client, bufnr)
           buffer = bufnr,
           callback = function()
            vim.lsp.buf.format({ bufnr = bufnr })
+           -- not working vim.lsp.buf.formatting_sync()  
            vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })
           end
       })
