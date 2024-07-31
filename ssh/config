@@ -1,0 +1,11 @@
+# Default github account: santhozkumar
+Host github.com
+   HostName github.com
+   IdentityFile ~/.ssh/id_ed25519
+   IdentitiesOnly yes
+   
+# Other github account: santhoshk25
+Host github-mri
+   HostName github.com
+   IdentityFile ~/.ssh/id_ed25519mri
+   IdentitiesOnly yes
