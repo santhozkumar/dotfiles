@@ -1,0 +1,11 @@
+[user]
+        name = Santhosh Kumar Devadoss
+        email = santhoshkumardeva25@gmail.com
+[push]
+        default = simple
+[core]
+        editor = nvim
+[includeIf "gitdir:~/CompanyAbc/"]
+        path = ~/CompanyAbc/.gitconfig
+[includeIf "gitdir:~/CompanyMno/"]
+        path = ~/CompanyMno/.gitconfig
