@@ -8,6 +8,8 @@ vim.schedule(function()
 			"angular",
 			"python",
 			"rust",
+      "golang",
+      "react",
 		},
 	})
 
