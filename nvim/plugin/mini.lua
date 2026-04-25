@@ -21,5 +21,9 @@ require("mini.move").setup({
 })
 
 local minifiles = require("mini.files")
-minifiles.setup()
+minifiles.setup({
+  options = {
+    use_as_default_explorer = false,
+  },
+})
 vim.keymap.set("n", "<leader>vw", minifiles.open, { desc = "View Working directory (Mini Files)" })
