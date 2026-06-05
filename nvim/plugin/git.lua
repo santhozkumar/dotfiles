@@ -16,7 +16,7 @@ gs.setup()
 vim.keymap.set("n", "<leader>gp", gs.preview_hunk, { desc = "Git - preview hunk" })
 vim.keymap.set("n", "<leader>gs", gs.stage_hunk, { desc = "Git - stage hunk" })
 vim.keymap.set("n", "<leader>gu", gs.undo_stage_hunk, { desc = "Git - unstage hunk" })
-vim.keymap.set("n", "<leader>gr", gs.reset_hunk, { desc = "Git - reset hunk" })
+vim.keymap.set("n", "<leader>gR", gs.reset_hunk, { desc = "Git - reset hunk" })
 vim.keymap.set("n", "<leader>gb", gs.toggle_current_line_blame, { desc = "Git - toggle current line blame" })
 vim.keymap.set("n", "<leader>gdt", gs.diffthis, { desc = "Git - diffview current file" })
 

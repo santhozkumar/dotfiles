@@ -1,9 +1,9 @@
 vim.pack.add({
-	"https://github.com/AlexvZyl/nordic.nvim",
-	"https://github.com/catppuccin/nvim",
+	"https://github.com/rose-pine/neovim",
 	"https://github.com/xiyaowong/transparent.nvim",
 })
-require("nordic").load()
+require("rose-pine").setup()
+vim.cmd("colorscheme rose-pine")
 
 local transparent = require("transparent")
 transparent.setup({

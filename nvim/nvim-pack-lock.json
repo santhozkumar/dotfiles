@@ -2,8 +2,7 @@
   "plugins": {
     "LuaSnip": {
       "rev": "0b4950a237ce441a6a3a947d501622453f6860ea",
-      "src": "https://github.com/L3MON4D3/LuaSnip",
-      "version": "2.0.0 - 2.1.0"
+      "src": "https://github.com/L3MON4D3/LuaSnip"
     },
     "alpha-nvim": {
       "rev": "7563da4a861ee6b3ed674d0ee5c5c0bd19383a38",
@@ -25,6 +24,10 @@
     "copilot.lua": {
       "rev": "ad7e729e9a6348f7da482be0271d452dbc4c8e2c",
       "src": "https://github.com/zbirenbaum/copilot.lua"
+    },
+    "copilot.vim": {
+      "rev": "a12fd5672110c8aa7e3c8419e28c96943ca179be",
+      "src": "https://github.com/github/copilot.vim"
     },
     "diffview.nvim": {
       "rev": "4516612fe98ff56ae0415a259ff6361a89419b0a",
@@ -78,6 +81,10 @@
     "neoscroll.nvim": {
       "rev": "c8d29979cb0cb3a2437a8e0ae683fd82f340d3b8",
       "src": "https://github.com/karb94/neoscroll.nvim"
+    },
+    "neovim": {
+      "rev": "6a961effd67f6130d36df6d1c05c48c739796dd2",
+      "src": "https://github.com/rose-pine/neovim"
     },
     "noice.nvim": {
       "rev": "7bfd942445fb63089b59f97ca487d605e715f155",
@@ -154,6 +161,10 @@
     "render-markdown.nvim": {
       "rev": "0fd43fb4b1f073931c4b481f5f3b7cea3749e190",
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
+    },
+    "rose-pine": {
+      "rev": "6a961effd67f6130d36df6d1c05c48c739796dd2",
+      "src": "https://github.com/rose-pine/neovim"
     },
     "smear-cursor.nvim": {
       "rev": "c85bdbb25db096fbcf616bc4e1357bd61fe2c199",

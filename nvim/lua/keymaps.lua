@@ -1,6 +1,17 @@
 -- CTRL+s to save in normal or input mode
 vim.keymap.set({ "n", "i" }, "<C-s>", "<cmd>w<CR>", { desc = "Save buffer" })
 
+-- Go back to Netrw explorer
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+
+-- html snippet autocomplete emmet-ls
+vim.g.user_emmet_leader_key = ','
+
+-- https://vi.stackexchange.com/questions/454/whats-the-simplest-way-to-strip-trailing-whitespace-from-all-lines-in-a-file
+-- vim.keymap.set("n", "<leader>S", ":let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>", { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>S', ':let _s=@/<Bar>:%s/\\s\\+$//e<Bar>:let @/=_s<Bar><CR>', { noremap = true })
+
+
 -- Close window
 vim.keymap.set({ "n" }, "<leader>wc", "<cmd>q<CR>", { desc = "Window close" })
 
@@ -70,3 +81,6 @@ vim.keymap.set("n", "L", "$")
 -- replace all occurences of the selected block
 vim.keymap.set("v", "<leader>s", '"hy:%s/<C-r>h//g<left><left>', { desc = "substitute selected block" })
 vim.keymap.set("v", "/", '"hy/<C-r>h', { desc = "search selected block" })
+
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww -n tmux-sessionizer<CR>")
+

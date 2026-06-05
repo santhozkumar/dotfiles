@@ -46,7 +46,7 @@ local function extractcacert()
   end
 
   local result = vim.system(
-    { "openssl", "x509", "-text", "-noout" },
+    { "sh", "-c", "while openssl x509 -noout -text; do :; done" },
     { stdin = pem }
   ):wait()
 
@@ -59,5 +59,5 @@ local function extractcacert()
   create_floating_window("Certificate Details", output_lines)
 end
 
-vim.api.nvim_create_user_command("ExtractCACert", extractcacert, {})
-vim.keymap.set("v", "<leader>ce", ":<C-u>lua vim.cmd('ExtractCACert')<CR>", { desc = "Extract and display CA certificate" })
+vim.api.nvim_create_user_command("XtractCACert", extractcacert, {})
+vim.keymap.set("v", "<leader>ce", ":<C-u>lua vim.cmd('XtractCACert')<CR>", { desc = "Xtract and display CA certificate" })
