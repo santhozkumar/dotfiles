@@ -26,9 +26,19 @@ require("telescope").load_extension("neoclip")
 
 local builtin = require("telescope.builtin")
 
+find_hidden_files = function ()
+  builtin.find_files({ hidden = true })
+end
+
+live_grep_hidden = function ()
+  builtin.live_grep({ hidden = true })
+end
+
 vim.keymap.set("n", "<C-p>", builtin.git_files, { desc = "Telescope find git files" })
 vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
+vim.keymap.set("n", "<leader>faf", find_hidden_files, { desc = "Telescope all files" })
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
+vim.keymap.set("n", "<leader>fg", live_grep_hidden, { desc = "Telescope live grep" })
 vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
 vim.keymap.set("n", "<leader>fr", builtin.resume, { desc = "Telescope Resume Previous Picker" })
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
