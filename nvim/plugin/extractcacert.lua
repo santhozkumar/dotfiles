@@ -59,5 +59,29 @@ local function extractcacert()
   create_floating_window("Certificate Details", output_lines)
 end
 
+local function extractcsr()
+  local pem = get_visual_selection()
+  if not pem or pem == "" then
+    vim.notify("No text selected", vim.log.levels.WARN)
+    return
+  end
+
+  local result = vim.system(
+    { "sh", "-c", "while openssl req -noout -text; do :; done" },
+    { stdin = pem }
+  ):wait()
+
+  if result.code ~= 0 then
+    vim.notify("openssl error: " .. (result.stderr or "unknown"), vim.log.levels.ERROR)
+    return
+  end
+
+  local output_lines = vim.split(result.stdout, "\n", { trimempty = true })
+  create_floating_window("Certificate Signing Request", output_lines)
+end
+
 vim.api.nvim_create_user_command("XtractCACert", extractcacert, {})
+vim.api.nvim_create_user_command("XtractCSR", extractcsr, {})
+
 vim.keymap.set("v", "<leader>ce", ":<C-u>lua vim.cmd('XtractCACert')<CR>", { desc = "Xtract and display CA certificate" })
+vim.keymap.set("v", "<leader>csr", ":<C-u>lua vim.cmd('XtractCSR')<CR>", { desc = "Xtract and display Certificate Signing Request" })
