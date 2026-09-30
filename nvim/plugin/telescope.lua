@@ -11,6 +11,8 @@ require("telescope").setup({
 		file_ignore_patterns = {
 			"^%.git/",
 			"^%.venv/",
+      "vendor/.*",
+      "node_modules/.*"
 		},
 	},
 	extensions = {
