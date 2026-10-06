@@ -58,7 +58,7 @@ vim.filetype.add({
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "go", "python", "bash", "javascript", "typescript", "tsx", "yaml" },
+	pattern = { "go", "python", "bash", "javascript", "typescript", "tsx", "yaml", "mmd" },
 	callback = function()
 		vim.treesitter.start()
 	end,
